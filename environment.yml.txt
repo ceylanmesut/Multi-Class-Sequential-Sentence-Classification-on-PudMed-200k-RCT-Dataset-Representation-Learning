@@ -1,0 +1,28 @@
+name: ml4h-p3
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - jupyter
+  - pip
+  - matplotlib
+  - jupyterlab
+  - numpy
+  - pandas
+  - tqdm
+  - nltk
+  - cython
+  - sklearn
+  - re
+  - keras
+  - zipfile
+  - string
+  - pip:
+    - tensorflow-gpu==2.4
+    - scikit-learn
+    - gensim == 4.0.1
+    - install tensorflow-addons
+    - pattern
+
+
+	
