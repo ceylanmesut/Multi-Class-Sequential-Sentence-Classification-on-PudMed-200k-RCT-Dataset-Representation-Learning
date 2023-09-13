@@ -8,8 +8,8 @@ As depicted in the left figure, the number of published RTCs increases every yea
 
 
 <p align="center" width="100%">
-<img src="figures/Fig1.png" width=45%>
-<img src="figures/Fig2.png" width=46%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig1.png" width=45%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig2.png" width=46%>
 <figcaption>
 
 *Left*: Number of RCTs present in PubMed published yearly between 1960 and 2014.
@@ -28,9 +28,9 @@ PubMed 200k RCT - dataset based on PubMed for sequential sentence classification
 Here is the brief descriptive statistics about the PubMed 200k RTC dataset:
 
 <p align="center" width="100%">
-<img src="figures/Fig3.png" width=35%>
-<img src="figures/Fig4.png" width=30%>
-<img src="figures/Fig5.png" width=30%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig3.png" width=35%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig4.png" width=30%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig5.png" width=30%>
 <figcaption>
 
 *Left:* Number of sentences w.r.t class labels.
