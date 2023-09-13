@@ -8,8 +8,8 @@ As depicted in the left figure, the number of published RTCs increases every yea
 
 
 <p align="center" width="100%">
-<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig1.png" width=45%>
-<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig2.png" width=46%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig1.PNG" width=45%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig2.PNG" width=46%>
 <figcaption>
 
 *Left*: Number of RCTs present in PubMed published yearly between 1960 and 2014.
@@ -20,17 +20,17 @@ As depicted in the left figure, the number of published RTCs increases every yea
 
 
 #### Goal
-The fundamental goal in this project is to classify the sequential sentences included in the abstracts of RCTs into background, objective, method, result, conclusion category such that backbone of the possible AI tool for automatically skimming unstructured RTCs is obtained.
+The fundamental goal of this project is to classify the sequential sentences included in the abstracts of RCTs into background, objective, method, result, conclusion category such that backbone of the possible AI tool for automatically skimming unstructured RTCs is obtained.
 
 #### Dataset
 PubMed 200k RCT - dataset based on PubMed for sequential sentence classification. The dataset consists of approximately 200,000 abstracts of RTCs, totaling 2.3 million sentences.
 
-Here is the brief descriptive statistics about the PubMed 200k RTC dataset:
+Here are the brief descriptive statistics about the PubMed 200k RTC dataset:
 
 <p align="center" width="100%">
-<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig3.png" width=35%>
-<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig4.png" width=30%>
-<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig5.png" width=30%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig3.PNG" width=35%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig4.PNG" width=30%>
+<img src="https://github.com/ceylanmesut/Multi-Class-Sequential-Sentence-Classification-on-PudMed-200k-RCT-Dataset-Representation-Learning/tree/main/figures/Fig5.PNG" width=30%>
 <figcaption>
 
 *Left:* Number of sentences w.r.t class labels.
@@ -38,10 +38,10 @@ Here is the brief descriptive statistics about the PubMed 200k RTC dataset:
 *Right:* Distribution of the number of sentences per abstract. Minimum: 3; mean: 11.6; maximum: 51; variance: 9.5; skewness: 0.9; kurtosis: 2.6..</figcaption>
 
 #### Labels and Performance Metric
-Ground truth labels are divided into five category: background, objective, method, result, conclusion. Evaluation metric is identified as F1-score.
+Ground truth labels are divided into five categories: background, objective, method, result, and conclusion. The Evaluation metric is identified as the F1-score.
 
 #### Project Steps
-1. Conduct preprocessing: Lowercasing, stop-words removal, replacing the digits with special token and punctuation removal.
+1. Conduct preprocessing: Lowercasing, stop-word removal, replacing the digits with special tokens and punctuation removal.
 2. Develop Baseline model: TF-IDF + Logistic Regression combination.
 3. Develop Word2Vec Model: Using gensim library.
 4. Developing LSTM/ GRU models for the text classification.
@@ -53,7 +53,7 @@ Ground truth labels are divided into five category: background, objective, metho
 - `datasets`: A directory containing PubMed 200k RTC dataset. Not included in the repository due to online data availability.
 
 ### Results and Discussion
-Below is the table demonstrating models, their parameters, architecture details, training methodologies, accuries and weigted F1-scores.
+Below is the table demonstrating models, their parameters, architecture details, training methodologies, accuracies and weighted F1-scores.
 
 | Models | Embedding Output Size | Bidirectional |# RNN Units | Dropout| Learning Rate | Optimizer | Batch Size | # of epochs | Accuracy* |Weighted F1 Score*|
 |:---:|:-------------:|:-----------:|:-----------:|:-------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -70,22 +70,22 @@ Below is the table demonstrating models, their parameters, architecture details,
 
 *Model performances depicted obtained on the test set.*
 
-In this project, we developed multiple deep learning models, LSTM and GRU models, with differing model parameters and architectures and evaluate the model performances. What we observe is that output dimension of embedding layer plays a key role however, it introduces number of model parameter and training time greatly.
+In this project, we developed multiple deep learning models, LSTM and GRU models, with differing model parameters and architectures and evaluated the model performances. What we observe is that the output dimension of the embedding layer plays a key role however, it introduces the number of model parameters and training time greatly.
 
-Secondly, bidirectionality is a game changer factor in our models. Once it is introduced, RNN units are able to preserve information from past and future states, thus capturing dependencies within sequences and learning over training dataset.
+Secondly, bidirectionality is a game-changer factor in our models. Once it is introduced, RNN units are able to preserve information from past and future states, thus capturing dependencies within sequences and learning over training dataset.
 
-Specifically, we observe that introducing Dropout layer after Dense Layer as well as within Bidirectional LSTM allowed our model to perform the best. Additionally, creating Bidirectional bottleneck by double LSTM units with the size of 50 and 10 distil the crucial states to pass through the network, resulting the best model performance.
+Specifically, we observe that introducing Dropout layer after Dense Layer as well as within Bidirectional LSTM allowed our model to perform the best. Additionally, creating a Bidirectional bottleneck by double LSTM units with the size of 50 and 10 distils the crucial states to pass through the network, resulting the best model performance.
 
 ### Main Challenges and Future Work
 
-From NLP point of view, it is difficult to obtain well-represented domain specific embeddings, in our case healthcare domain. Additionally, we haven't used any pre-trained model such as BioBert to head start with robust word representations.
+From NLP point of view, it is difficult to obtain well-represented domain-specific embeddings, in our case healthcare domain. Additionally, we haven't used any pre-trained model such as BioBert to head start with robust word representations.
 
 As future action, one can experiment with different word embedding models such as Glove and Doc2Vec. In this project, we treat each sequence separately and extract features from word level. One can extend this approach with feeding series of sequences each time, thus enforcing model to treat the series as documents and capture relationships among them.
 
-Additionally, one can extend the propose architectures with deeper RNN models, explore different optimizer and learning rate, batch sizes, vocabulary size, Ngram approachs and all the other parameters that not mentioned.
+Additionally, one can extend the proposed architectures with deeper RNN models, and explore different optimizers and learning rates, batch sizes, vocabulary sizes, Ngram approaches, and all the other parameters that are not mentioned.
 
 ### Acknowledgements
 The graphs are included in this README file: *Source: [PubMed 200k RCT: a Dataset for Sequential Sentence Classification in Medical Abstracts](https://aclanthology.org/I17-2052) (Dernoncourt & Lee, IJCNLP 2017)*
 
 ### License
-This work is licensed under MIT License, however it is subject to repository-owner approval and permission for public and private usage.
+This work is licensed under MIT License, however, it is subject to repository-owner approval and permission for public and private usage.
